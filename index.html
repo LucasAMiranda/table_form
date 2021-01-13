@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML E CSS</title>
+	<link rel="stylsheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+	<div>
+		<table id="myTable" border="1">
+				<tr>
+					<th>Código</th>
+					<th>Nome</th>
+				</tr>
+
+				<tr>
+					<td>12</td>
+					<td>João</td>
+				</tr>
+				<tr>
+					<td>34</td>
+					<td>Maria</td>
+				</tr>	
+		</table>
+	</div>
+
+	<div>
+
+		<form id="formulario" method="POST">
+			<label for="nome">Nome</label>
+			<input type="text" id="nome" placeholder="Digite seu nome"/>
+			<label for="codigo">Código</label>
+			<input type="text" id="codigo" />
+			<button onclick="myFunction(event)">Enviar</button>
+		</form>
+
+	</div>
+	<script>
+		function myFunction(event) {
+		  event.preventDefault()	
+		  var table = document.getElementById("myTable");
+		  var row = table.insertRow(2);
+		  var codigo = row.insertCell(0);
+		  var nome = row.insertCell(1);
+		  codigo.innerHTML = document.getElementById("codigo").value;
+		  nome.innerHTML = document.getElementById("nome").value;
+		}
+  </script>
+</body>
+</html>
